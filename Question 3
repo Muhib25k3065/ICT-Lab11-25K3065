@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+class Printer {
+	public:
+		void print(int x)
+		{
+			cout << x << endl;
+		}
+		void print(double y)
+		{
+			cout << y << endl;
+		}
+};
+
+int main(){
+	Printer p1;
+	p1.print(12);
+	p1.print(13.5);
+}
