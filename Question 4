@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+class BankAccount {
+	protected:
+		float balance;
+	public:
+		BankAccount() {
+			balance = 0;
+		}
+		void deposit(float x){
+			balance += x;
+		}
+		void getBalance(){
+			cout << "Balance: " << balance << endl;
+		}
+};
+
+class SavingsAccount: public BankAccount {
+	private:
+		float interestAmount;
+	public:
+		void calcInterest(){
+			interestAmount = (balance*5)/100;
+		}
+		void getInterest(){
+			cout << "Interest: " << interestAmount << endl;
+		}
+};
+
+int main(){
+	SavingsAccount s1;
+	s1.deposit(100);
+	s1.getBalance();
+	s1.calcInterest();
+	s1.getInterest();
+	
+	return 0;
+}
